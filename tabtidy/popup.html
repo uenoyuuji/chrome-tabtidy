@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <style>
+    body { font-family: sans-serif; padding: 16px; width: 400px;}
+    label { display: block; margin: 8px 0; }
+    section { display: inline-block; vertical-align: top; }
+  </style>
+</head>
+<body>
+  <section>
+    <h4>Scope:</h4>
+    <label><input type="radio" name="scope" value="current" checked> Current window</label>
+    <label><input type="radio" name="scope" value="all"> All windows</label>
+  </section>
+  <section>
+    <h4>Actions:</h4>
+    <label><input type="checkbox" id="split" checked> Split by domain</label>
+    <label><input type="checkbox" id="sort" checked> Sort tabs</label>
+    <label><input type="checkbox" id="dedupe" checked> Close duplicate tabs</label>
+  </section>
+  <hr>
+  <button id="run">Tidy up!</button>
+  <script src="popup.js"></script>
+</body>
+</html>
