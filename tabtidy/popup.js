@@ -17,3 +17,10 @@ document.getElementById('run').addEventListener('click', async () => {
   chrome.runtime.sendMessage({ action, scope, actions });
   window.close();
 });
+
+document.getElementById('copy-tabs').addEventListener('click', async () => {
+  const tabs = await chrome.tabs.query({ currentWindow: true });
+  const tabList = tabs.map(tab => tab.url).join('\n');
+  await navigator.clipboard.writeText(tabList);
+  window.close();
+});
