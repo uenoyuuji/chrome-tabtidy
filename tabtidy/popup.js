@@ -14,7 +14,8 @@ document.getElementById('run').addEventListener('click', async () => {
     dedupe: document.getElementById('dedupe').checked,
   };
 
-  chrome.runtime.sendMessage({ action, scope, actions });
+  const currentWindow = await chrome.windows.getCurrent();
+  chrome.runtime.sendMessage({ action, scope, windowId: currentWindow.id, actions });
   window.close();
 });
 
